@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family:'DM Mono';
+  background-color: thistle;
+  color: navy;
+  margin: 20px;
+  font-size: 14px;
+}
+
+h1 {
+  font-weight: normal;
+  font-family: times;
+  font-size:50px;
+}
+
+.header{
+  padding-bottom: 20px;
+}
+
+#template {
+  border-bottom:1px solid navy;
+
+
+}
+.row {
+  border-top:1px solid navy;
+  padding: 10px 0px;
+  line-height: 1.5rem;
+  transition: all 0.5s ease;
+  text-transform: lowercase;
+
+}
+
+.inner-row {
+  max-width: 700px;
+  border: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.row:hover {
+  font-size: 24px;
+  padding: 15px 0px;
+  cursor: pointer;
+
+}
+
+/* .row:hover .button{
+  color:thistle;
+  background-color: navy;
+  border: 1px solid thistle;
+
+} */
+
+/* .contents {
+  padding: 20px 0px;
+} */
+
+
+.button {
+  font-size: 12px;
+  border: 1px solid navy;
+  border-radius: 20px;
+  padding:4px 8px;
+  margin-left: 100px;
+  color:navy;
+  right:0px;
+  transition: all 0.1s ease;
+
+}
+
+.button:hover{
+  background-color:navy;
+  color:thistle;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.smallchar {
+  font-size:18px;
+  transform: rotate(0deg);
+  text-align: center;
+  animation: spin 1s infinite;
+
+}
+
+/* this isn't working for some reason */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center center;
+
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center center;
+
+  }
+}
+
+
+.number{
+  font-size:14px;
+}
+
+.flowers {
+  position: fixed;
+  padding-bottom: 20px;
+  bottom:0px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+  risd graphic design | spring 2021 | <a href="https://kaaathy.com/risd-cp-2021" target="_blank" style="color:navy">?</a>
+<br>
+  <h1>computational poetics <br><span style="font-family:'dm mono'; font-size:45px">reader</span></h1>
+</div>
+<div id="template">
+<!-- Figure this out tomorrow -->
+
+<div class = "row" v-for="(item,index) in allItems">
+    <!-- Activate this if you want a toggle effect -->
+      <div class ="inner-row">
+      <div><span class="smallchar">✻</span><span class ="number">&nbsp;&nbsp;{{index}}</span></div>
+      <div>{{item.artist}}</div>
+      <div>{{item.project}}</div>
+      <div><a class = "button" v-bind:href="item.url" target="_blank">Read</a></div>
+
+      </div>
+
+</div>
+
+<!-- end row element -->
+</div>
+<br>
+<div class="flowers">
+&nbsp;✿&nbsp;&nbsp;&nbsp;✻&nbsp;&nbsp;&nbsp;&nbsp;✻&nbsp;&nbsp;&nbsp;✿&nbsp;&nbsp;&nbsp;✿&nbsp;&nbsp;&nbsp;✿
+<br>
+\\|// \\|///  \\\|//\\\|///
+</div>
+<!-- <div class="link">
+</div> -->
+<script type = "module">
+
+
+new Vue({
+    el: "#template",
+    data: {
+      shownitem: 0,
+      allItems: [
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+            {
+          		shown:false,
+              line:``,
+              artist:`Your name`,
+              project:`Project name`,
+              info:`like some 14 year old girl waiting for her crush to glance back i 
+                    keep waiting for capitalism to end
+                    but it won’t end
+                    my adult life lover states
+                    on what will end:
+                    Libraries  Birds  Retirement  Recess Sprinting during recess  Hispid Hares Starfish shaped like stars  Inconvenience `,
+              stuff:`Stuff`,
+              url:""
+          	},
+
+
+          ]
+        }
+      });
+
+
+</script>
+
+</body>
+</html>
