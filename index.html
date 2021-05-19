@@ -44,7 +44,7 @@ h1 {
 }
 
 .row:hover {
-  font-size: 36px;
+  font-size: 32px;
   padding: 15px 0px;
   cursor: default;
 }
@@ -189,7 +189,7 @@ risd graphic design | spring 2021 | <a target="_blank" href="https://kaaathy.com
   <div class="index small"></div>
   <div>name</div>
   <div>project</div>
-  <div>mobile?</div>
+  <!-- <div>mobile?</div> -->
   <div></div>
 
 </div>
@@ -198,9 +198,9 @@ risd graphic design | spring 2021 | <a target="_blank" href="https://kaaathy.com
     <!-- Activate this if you want a toggle effect -->
     <div class="inner-row">
       <div class="index small"><span class="decoration">✻</span>&nbsp;&nbsp;{{index}}</div>
-      <div>{{item.artist}}</div>
-      <div>{{item.project}}</div>
-      <div class="small">{{item.mobile}}</div>
+      <div style ="padding-right:5px;">{{item.artist}}</div>
+      <div style ="padding-left:5px;">{{item.project}}</div>
+      <!-- <div class="small">{{item.mobile}}</div> -->
       <div><a class = "button" v-bind:href="item.url" target="_blank">Read</a></div></div>
     </div>
 
